@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   typescript: {
     strict: true
   },
+
   app: {
     head: {
       title: 'Nuxt3 Test App',
@@ -10,5 +11,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Template de prueba para postulantes' }
       ]
     }
-  }
+  },
+
+  modules: ['@nuxtjs/tailwindcss']
 })

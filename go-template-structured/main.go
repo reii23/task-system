@@ -1,9 +1,11 @@
 package main
 
 import (
-    "go-template/routes"
-    "go-template/services"
-    "github.com/gin-gonic/gin"
+	"go-template/routes"
+	"go-template/services"
+
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -11,6 +13,8 @@ func main() {
     services.InitMongo()
 
     r := gin.Default()
+
+    r.Use(cors.Default())
 
     // Registrar rutas
     routes.RegisterRoutes(r)
