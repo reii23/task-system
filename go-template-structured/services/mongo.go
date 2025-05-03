@@ -23,3 +23,7 @@ func InitMongo() {
 
     fmt.Println("Connected to MongoDB")
 }
+
+func TaskCollection() *mongo.Collection {
+    return Client.Database("tasksdb").Collection("tasks")
+}
