@@ -7,12 +7,12 @@
     "module": true,
     "resourceType": "script"
   },
-  "C:/Usach/citiaps/tarea-practica-citiaps/nuxt3-template/node_modules/nuxt/dist/app/entry.js": {
+  "C:/Usach/citiaps/task-system/nuxt3-template/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
     "isEntry": true,
-    "file": "C:/Usach/citiaps/tarea-practica-citiaps/nuxt3-template/node_modules/nuxt/dist/app/entry.js"
+    "file": "C:/Usach/citiaps/task-system/nuxt3-template/node_modules/nuxt/dist/app/entry.js"
   }
 }

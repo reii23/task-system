@@ -1,1 +1,1 @@
-export { default } from "file:///C:/Usach/citiaps/tarea-practica-citiaps/nuxt3-template/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///C:/Usach/citiaps/task-system/nuxt3-template/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
