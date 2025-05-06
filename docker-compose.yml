@@ -22,5 +22,16 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017
 
+  frontend:
+    build:
+      context: ./nuxt3-template
+      dockerfile: Dockerfile
+    container_name: nuxt-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
 volumes:
   mongo_data:
