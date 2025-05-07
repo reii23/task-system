@@ -64,7 +64,10 @@ const mensaje = ref('')
 const guardarTarea = async () => {
   if (!titulo.value.trim()) return
   isSubmitting.value = true
-  await $fetch('http://localhost:8080/tasks', {
+  const baseUrl = process.server
+    ? 'http://backend:8080'
+    : (process.env.NUXT_PUBLIC_API_URL || 'http://localhost:8080');
+  await $fetch(`${baseUrl}/tasks`, {
     method: 'POST',
     body: { title: titulo.value, description: descripcion.value }
   })

@@ -54,16 +54,22 @@
   const tareas = ref([])
   
   async function cargarTareas() {
-    tareas.value = await $fetch('http://localhost:8080/tasks')
+    const baseUrl = process.server
+      ? 'http://backend:8080'
+      : (process.env.NUXT_PUBLIC_API_URL || 'http://localhost:8080');
+    tareas.value = await $fetch(`${baseUrl}/tasks`)
   }
   
   onMounted(cargarTareas)
   
-  const tareasPendientes = computed(() => tareas.value.filter(t => !t.completed))
-  const tareasCompletadas = computed(() => tareas.value.filter(t => t.completed))
+  const tareasPendientes = computed(() => (tareas.value || []).filter(t => !t.completed))
+  const tareasCompletadas = computed(() => (tareas.value || []).filter(t => t.completed))
   
   async function toggleCompletada(id) {
-    await $fetch(`http://localhost:8080/tasks/${id}/complete`, { method: 'PUT' })
+    const baseUrl = process.server
+      ? 'http://backend:8080'
+      : (process.env.NUXT_PUBLIC_API_URL || 'http://localhost:8080');
+    await $fetch(`${baseUrl}/tasks/${id}/complete`, { method: 'PUT' })
     await cargarTareas()
   }
   </script>
